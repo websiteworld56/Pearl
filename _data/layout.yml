@@ -4,7 +4,7 @@ animation: "bounceOut"
 
 # Images
 
-logo: "pearl_logo.png"
+logo: "pearl.svg"
 hero: "header_image.png"
 avatar: "pearl_avatar.jpg"
 
