@@ -2,7 +2,7 @@
 # General Site Settings
 
 title: Pearl Pugh
-description: Thinker // Designer // YouTuber
+description: God // Family // Boss // Entrepreneur // Author
 email: Pugh.pearl@yahoo.com
 
 # NOTE: The Logo and Background image are defined in the all.sass document.
@@ -39,7 +39,9 @@ seo:
 # NOTE: The avatar is defined in the all.sass document.
 
 blurb: >
- **A pioneering visionary, compelling speaker, trailblazing author, and serial entrepreneur** 
+ **A pioneering visionary, compelling speaker, trailblazing author, and serial entrepreneur** Pearl is taking the world by a storm with her determination 
+ and desire for seeing transformation in every aspect of her life.
+
 
 skills:
 - {name: Communication, value: '9'}
