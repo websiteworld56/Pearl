@@ -5,7 +5,7 @@ animation: "bounceOut"
 # Images
 
 logo: "pearl_logo.png"
-hero: "Header_bg.png"
+hero: "header_bg.png"
 avatar: "pearl_avatar.jpg"
 
 # Colors
