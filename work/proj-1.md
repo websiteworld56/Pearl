@@ -1,5 +1,5 @@
 ---
-title: Typo International Design Talks Stuff
+title: Wife/Mom
 ---
 
 ![Typo International]({{ site.github.url }}/assets/img/work/proj-1/img1.jpg)
