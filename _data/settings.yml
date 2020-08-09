@@ -11,6 +11,7 @@ menu:
 - {name: About Me, url: '#about-me'}
 - {name: Works, url: '#work'}
 - {name: Contact, url: '#contact'}
+- {name: Meet Pearl, url: 'meet-me.html'}
 
 #-------------------------------
 # SEO Section
