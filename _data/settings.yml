@@ -12,6 +12,9 @@ menu:
 - {name: Works, url: '#work'}
 - {name: Contact, url: '#contact'}
 - {name: Meet Pearl, url: 'meet-me.html'}
+- {name: Product Order, url: 'product-order.html'}
+- {name: Mini Subscribe, url: 'mini-subscribe.html'}
+- {name: Booking, url: 'booking-form.html'}
 
 #-------------------------------
 # SEO Section
