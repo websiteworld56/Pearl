@@ -8,7 +8,7 @@ email: Pugh.pearl@yahoo.com
 # NOTE: The Logo and Background image are defined in the all.sass document.
 
 menu:
-- {name: Home, url: ''}
+- {name: Home, url: {{ site.url }} }
 - {name: Meet Pearl, url: 'meet-me'}
 - {name: Product Order, url: 'product-order'}
 - {name: Booking, url: 'booking-form'}
