@@ -9,9 +9,9 @@ email: Pugh.pearl@yahoo.com
 
 menu:
 - {name: Home, url: '#'}
-- {name: Meet Pearl, url: 'meet-me'}
-- {name: Product Order, url: 'product-order'}
-- {name: Booking, url: 'booking-form'}
+- {name: Meet Pearl, url: '/meet-me'}
+- {name: Product Order, url: '/product-order'}
+- {name: Booking, url: '/booking-form'}
 
 #-------------------------------
 # SEO Section
