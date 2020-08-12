@@ -125,7 +125,9 @@
           }
           var thankYouMessage = form.querySelector(".thankyou_message");
           if (thankYouMessage) {
-            window.location.href="/form-success"
+            var url = window.location.href; 
+            url= url.slice(0, url.lastIndexOf('/'));  
+            window.location.reload(url+'/form-success');
           }
         }
     };
