@@ -21,18 +21,21 @@ permalink: /form-success
   
   {% include analytics.html %}
 </head>
-<body class="form-success">
+<body>
 
-
+{% include header.html %}
+  
+  <section class="form-success">
 <h1>Form submitted successfully!</h1>
 
 <p>Please wait while we return you to {{ site.data.settings.title }}</p>
 
+  </section>
 
-
-
+  {% include footer.html %}
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="{{ site.github.url }}/assets/js/functions.js"></script>
+
 </body>
 </html>
