@@ -22,7 +22,8 @@
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 30%;
+  height: 55%;
 }
 
 /* The Close Button */
@@ -45,7 +46,7 @@
 </style>
 
 <!-- Trigger/Open The Modal -->
-<button id="myBtn">Subscribe Now</button>
+<button class="subscribe-now" id="myBtn">Subscribe Now</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -56,7 +57,7 @@
     <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
     action="https://script.google.com/macros/s/AKfycbwQTUGJX9-5QspDIPLcUktL2rB-CPSaKAysRkozqw/exec">
       <div class="form-elements">
-        <h3>Subscribe Now!</h3>
+        <h4>Subscribe Now!</h4>
         <fieldset class="pure-group">
           <label for="name">Your Name: </label>
           <input id="name" name="name" placeholder="name" required />
@@ -74,9 +75,8 @@
         </fieldset>
   
         <fieldset class="submit-wrap">
-           <button class="button-success pure-button button-xlarge">
-            <i class="fa fa-paper-plane"></i>&nbsp;Subscribe</button>
-        </fieldset>
+         <input type="submit" value="Subscribe!">
+      </fieldset>
       </div>
 
 
