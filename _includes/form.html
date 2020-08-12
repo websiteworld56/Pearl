@@ -2,25 +2,89 @@
 
   <h3>Let's work together</h3>
 
-<form method="POST" action="//formspree.io/{{ site.data.settings.email }}">
+<form id='foo'>
+      <p>
+        <label>Name</label>
+        <input id='name' name='name' type='text'>
+      </p><p>
+        <label>Email Address</label>
+        <input id='email' name='email' type='email'>
+      </p><p>
+        <label>Phone Number</label>
+        <input id='phone' name='phone' type='tel'>
+      </p><p>
+        <label>Message</label>
+        <textarea id='message' name='message' rows='5'></textarea>
+      </p>
+      <p>
+        <label>Message-2</label>
+        <textarea id='message-2' name='message-2' rows='5'></textarea>
+      </p>
+        <div id='success'></div>
+        <button type='submit'>Send</button>
+    </form>
 
-  <fieldset class="contact-info-group">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script>
+    // Variable to hold request
+var request;
 
-    <label><span>Your Name</span>
-    <input type="text" name="name"></label>
+// Bind to the submit event of our form
+$("#foo").submit(function(event){
 
-    <label><span>Your Email</span>
-    <input type="email" name="_replyto"></label>
+    // Abort any pending request
+    if (request) {
+        request.abort();
+    }
+    // setup some local variables
+    var $form = $(this);
 
-  </fieldset>
+    // Let's select and cache all the fields
+    var $inputs = $form.find("input, select, button, textarea");
 
-  <label><span>Tell me about your project</span>
-  <textarea name="message"></textarea></label>
+    // Serialize the data in the form
+    var serializedData = $form.serialize();
 
-  <fieldset class="submit-wrap">
-    <input type="submit" value="Send">
-  </fieldset>
+    // Let's disable the inputs for the duration of the Ajax request.
+    // Note: we disable elements AFTER the form data has been serialized.
+    // Disabled form elements will not be serialized.
+    $inputs.prop("disabled", true);
 
-</form>
+    // Fire off the request to /form.php
+    request = $.ajax({
+        url: "https://script.google.com/macros/s/AKfycbySY8jJsq60a1978VrL1BZ3tqId4tSvigSks7c_cqfA-Fu-t7XN/exec",
+        type: "post",
+        data: serializedData
+    });
+
+    // Callback handler that will be called on success
+    request.done(function (response, textStatus, jqXHR){
+        // Log a message to the console
+        console.log("Hooray, it worked!");
+        console.log(response);
+        console.log(textStatus);
+        console.log(jqXHR);
+    });
+
+    // Callback handler that will be called on failure
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // Log the error to the console
+        console.error(
+            "The following error occurred: "+
+            textStatus, errorThrown
+        );
+    });
+
+    // Callback handler that will be called regardless
+    // if the request failed or succeeded
+    request.always(function () {
+        // Reenable the inputs
+        $inputs.prop("disabled", false);
+    });
+
+    // Prevent default posting of form
+    event.preventDefault();
+});
+  </script>
 
 </section>
