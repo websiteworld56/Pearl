@@ -1,172 +1,219 @@
-    
-<section>
-    <div>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-<div class="container">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#form">
-          Subscribe Now
-        </button>  
-      </div>
-      
-      <div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header border-bottom-0">
-              <h5 class="modal-title" id="exampleModalLabel">Subscribe For Updates!</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-           
-              <div class="modal-body">
-                <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
-                action="https://script.google.com/macros/s/AKfycbwQTUGJX9-5QspDIPLcUktL2rB-CPSaKAysRkozqw/exec">
-                  <div class="form-elements">
-                    
-                    <fieldset class="pure-group">
-                      <label for="name">Your Name: </label>
-                      <input id="name" name="name" placeholder="name" required />
-                    </fieldset>
-                  <br>
-                    <fieldset class="pure-group">
-                      <label for="email">Your Email Address:</label>
-                      <input id="email" name="email" type="email" value=""
-                      required placeholder="example@example.com"/>
-                    </fieldset>
-                  <br>
-                    <fieldset class="pure-group honeypot-field">
-                      <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text field; must be empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
-                      <input id="honeypot" type="text" name="honeypot" value="" />
-                    </fieldset>
-              
-                    <fieldset class="submit-wrap">
-                       <input class="btn btn-success" type="submit" value="Subscribe">
-                    </fieldset>
-                  </div>
-              
-    
-                </form>
-              </div>
-          
-          </div>
-        </div>
-      </div>
-      <style>
-        .honeypot-field {
+<style>
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.honeypot-field {
           display: none;
         }
-        </style>
-        <script>
-          (function() {
-        // get all data in form and return object
-        function getFormData(form) {
-          var elements = form.elements;
-          var honeypot;
-      
-          var fields = Object.keys(elements).filter(function(k) {
+</style>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Subscribe Now</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
+    action="https://script.google.com/macros/s/AKfycbwQTUGJX9-5QspDIPLcUktL2rB-CPSaKAysRkozqw/exec">
+      <div class="form-elements">
+        <h3>Subscribe Now!</h3>
+        <fieldset class="pure-group">
+          <label for="name">Your Name: </label>
+          <input id="name" name="name" placeholder="name" required />
+        </fieldset>
+      <br>
+        <fieldset class="pure-group">
+          <label for="email">Your Email Address:</label>
+          <input id="email" name="email" type="email" value=""
+          required placeholder="example@example.com"/>
+        </fieldset>
+      <br>
+        <fieldset class="pure-group honeypot-field">
+          <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text field; must be empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
+          <input id="honeypot" type="text" name="honeypot" value="" />
+        </fieldset>
+  
+        <fieldset class="submit-wrap">
+           <button class="button-success pure-button button-xlarge">
+            <i class="fa fa-paper-plane"></i>&nbsp;Subscribe</button>
+        </fieldset>
+      </div>
+
+
+    </form>
+  </div>
+
+</div>
+<script>
+(function() {
+    // get all data in form and return object
+    function getFormData(form) {
+        var elements = form.elements;
+        var honeypot;
+
+        var fields = Object.keys(elements).filter(function(k) {
             if (elements[k].name === "honeypot") {
-              honeypot = elements[k].value;
-              return false;
+                honeypot = elements[k].value;
+                return false;
             }
             return true;
-          }).map(function(k) {
-            if(elements[k].name !== undefined) {
-              return elements[k].name;
-            // special case for Edge's html collection
-            }else if(elements[k].length > 0){
-              return elements[k].item(0).name;
+        }).map(function(k) {
+            if (elements[k].name !== undefined) {
+                return elements[k].name;
+                // special case for Edge's html collection
+            } else if (elements[k].length > 0) {
+                return elements[k].item(0).name;
             }
-          }).filter(function(item, pos, self) {
+        }).filter(function(item, pos, self) {
             return self.indexOf(item) == pos && item;
-          });
-      
-          var formData = {};
-          fields.forEach(function(name){
+        });
+
+        var formData = {};
+        fields.forEach(function(name) {
             var element = elements[name];
-            
+
             // singular form elements just have one value
             formData[name] = element.value;
-      
+
             // when our element has multiple items, get their values
             if (element.length) {
-              var data = [];
-              for (var i = 0; i < element.length; i++) {
-                var item = element.item(i);
-                if (item.checked || item.selected) {
-                  data.push(item.value);
+                var data = [];
+                for (var i = 0; i < element.length; i++) {
+                    var item = element.item(i);
+                    if (item.checked || item.selected) {
+                        data.push(item.value);
+                    }
                 }
-              }
-              formData[name] = data.join(', ');
+                formData[name] = data.join(', ');
             }
-          });
-      
-          // add form-specific values into the data
-          formData.formDataNameOrder = JSON.stringify(fields);
-          formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
-          formData.formGoogleSendEmail
-            = form.dataset.email || ""; // no email by default
-      
-          return {data: formData, honeypot: honeypot};
-        }
-      
-        function handleFormSubmit(event) {  // handles form submit without any jquery
-          event.preventDefault();           // we are submitting via xhr below
-          var form = event.target;
-          var formData = getFormData(form);
-          var data = formData.data;
-      
-          // If a honeypot field is filled, assume it was done so by a spam bot.
-          if (formData.honeypot) {
+        });
+
+        // add form-specific values into the data
+        formData.formDataNameOrder = JSON.stringify(fields);
+        formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
+        formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
+
+        return {
+            data: formData,
+            honeypot: honeypot
+        };
+    }
+
+    function handleFormSubmit(event) { // handles form submit without any jquery
+        event.preventDefault(); // we are submitting via xhr below
+        var form = event.target;
+        var formData = getFormData(form);
+        var data = formData.data;
+
+        // If a honeypot field is filled, assume it was done so by a spam bot.
+        if (formData.honeypot) {
             return false;
-          }
-      
-          disableAllButtons(form);
+        }
 
-          $('#form').modal('toggle');
+        disableAllButtons(form);
+        modal.style.display = "none";
 
-          var url = form.action;
-          var xhr = new XMLHttpRequest();
-          xhr.open('POST', url);
-          // xhr.withCredentials = true;
-          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-          xhr.onreadystatechange = function() {
-              if (xhr.readyState === 4) {
+        var url = form.action;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url);
+        // xhr.withCredentials = true;
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
                 form.reset();
                 var formElements = form.querySelector(".form-elements")
                 if (formElements) {
-                  formElements.style.display = "none"; // hide form
+                    formElements.style.display = "none"; // hide form
                 }
-              }
-          };
-          // url encode form data for sending as post data
-          var encoded = Object.keys(data).map(function(k) {
-              return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-          }).join('&');
-          xhr.send(encoded);
-        }
-        
-        function loaded() {
-          // bind to the submit event of our form
-          var forms = document.querySelectorAll("form.gform");
-          for (var i = 0; i < forms.length; i++) {
-            forms[i].addEventListener("submit", handleFormSubmit, false);
-          }
+            }
         };
-        document.addEventListener("DOMContentLoaded", loaded, false);
-      
-        function disableAllButtons(form) {
-          var buttons = form.querySelectorAll("button");
-          for (var i = 0; i < buttons.length; i++) {
-            buttons[i].disabled = true;
-          }
+        // url encode form data for sending as post data
+        var encoded = Object.keys(data).map(function(k) {
+            return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+        }).join('&');
+        xhr.send(encoded);
+    }
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
         }
-      })();
-      
+    }
+
+    function loaded() {
+        // bind to the submit event of our form
+        var forms = document.querySelectorAll("form.gform");
+        for (var i = 0; i < forms.length; i++) {
+            forms[i].addEventListener("submit", handleFormSubmit, false);
+        }
+    };
+    document.addEventListener("DOMContentLoaded", loaded, false);
+
+    function disableAllButtons(form) {
+        var buttons = form.querySelectorAll("button");
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = true;
+        }
+    }
+})();
 </script>
-    </div>
-</section>
