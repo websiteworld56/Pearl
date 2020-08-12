@@ -124,10 +124,8 @@
             formElements.style.display = "none"; // hide form
           }
           var thankYouMessage = form.querySelector(".thankyou_message");
-          if (thankYouMessage) {
-            var url = window.location.href; 
-            url= url.slice(0, url.lastIndexOf('/'));  
-            window.location.reload(url+'/form-success');
+          if (thankYouMessage) {  
+            window.location.reload('/Pearl/form-success');
           }
         }
     };
