@@ -64,7 +64,7 @@
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
+    <form class="gformsubscribe pure-form pure-form-stacked" method="POST" data-email="example@email.net"
     action="https://script.google.com/macros/s/AKfycbwQTUGJX9-5QspDIPLcUktL2rB-CPSaKAysRkozqw/exec">
       <div class="form-elements">
         <h4>Subscribe Now!</h4>
@@ -212,7 +212,7 @@
 
     function loaded() {
         // bind to the submit event of our form
-        var forms = document.querySelectorAll("form.gform");
+        var forms = document.querySelectorAll("form.gformsubscribe");
         for (var i = 0; i < forms.length; i++) {
             forms[i].addEventListener("submit", handleFormSubmit, false);
         }
