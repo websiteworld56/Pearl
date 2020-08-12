@@ -10,19 +10,19 @@
         <label for="name">Your Name: </label>
         <input id="name" name="name" placeholder="" />
       </fieldset>
-
+<br>
       <fieldset class="pure-group">
-        <label for="email"><em>Your</em>Your Email Address:</label>
+        <label for="email"><em>Your</em> Email Address:</label>
         <input id="email" name="email" type="email" value=""
         required placeholder=""/>
       </fieldset>
-
+<br>
       <fieldset class="pure-group">
         <label for="message">Tell me about your project: </label>
         <textarea id="message" name="message" rows="10"
-        placeholder="Tell us what's on your mind..."></textarea>
+        placeholder=""></textarea>
       </fieldset>
-      
+      <br>
       <fieldset class="pure-group honeypot-field">
         <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text field; must be empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
         <input id="honeypot" type="text" name="honeypot" value="" />
@@ -39,7 +39,11 @@
     </div>
 
   </form>
-
+  <style>
+  .honeypot-field {
+    display: none;
+  }
+  </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script>
     (function() {
