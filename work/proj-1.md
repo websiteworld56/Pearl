@@ -1,9 +1,0 @@
----
-title: Wife/Mom
----
-
-![Typo International]({{ site.github.url }}/assets/img/work/proj-1/mom_1.jpg)
-
-TYPO: International Design Talks is an annual event held in Berlin, London, and San Francisco. This promotional project is developed to market the event for the designindustry. The use of patterns, sophisticated color scheme and typography are applied for the print and mobile application.
-
-![Typo International]({{ site.github.url }}/assets/img/work/proj-1/mom_2.jpg)
